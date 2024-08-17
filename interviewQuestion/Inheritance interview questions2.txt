@@ -1,0 +1,212 @@
+36. How will you prohibit inheritance in Java?
+
+Ans: If you declare a class as final, it cannot be extended. Thus, we can prohibit the inheritance of that class in Java.
+
+37. In the following code, we have created 3 Classes A, B, and C. Class C extends Class B and Class B extends Class A.
+
+Each class has a method m1(), is there any way to call A’s m1() method from Class C?
+
+public class A 
+{
+  void m1(){
+    System.out.println("m1 in class A");	 
+ }
+}
+public class B extends A
+{
+  void m1() {
+     System.out.println("m1 in class B");	
+ }
+}
+public class C extends B 
+{
+  void m1() {
+	System.out.println("m1 in class C"); 
+   }
+ }
+public class Test {
+public static void main(String[] args) 
+{
+   C c = new C();
+    c.m1();
+  }
+}
+
+ 
+Ans: In the above code, every class has m1() method with the same signature thus Class B is overriding A’s m1() method and Class C is overriding Class B’s m1() method.
+
+Now, it is possible for class B and class C to call their super class’s m1() method by using super.m1() call.
+
+But here, the question is asking to invoke A’s m1() method from Class C, which is not possible because it violates the OOPs concept in Java and also not super.super in java.
+
+Since Java does not allow multiple inheritance, that means C can see only one superclass which will have just one m1() method implementation. C can never see A’s m1() method.
+
+We also call this scenario as the Diamond Problem of Multiple Inheritance. The only way to call A’s m1() method from Class C is if Class B and class C call super.m1() method in its m1() implementation.
+
+38. What will be the output of the following program?
+
+public class A 
+{
+ void m1() {
+     System.out.println("m1 in class A");	 
+ }
+}
+public class B extends A 
+{
+  void m1() {
+       super.m1();
+       System.out.println("m1 in class B");
+  }
+}
+public class C extends B 
+{
+   void m1() {
+      System.out.println("m1 in class C"); 
+   }
+ }
+public class Test {
+public static void main(String[] args)
+{
+   C c = new C();
+     c.m1();
+  }
+}
+Ans: 
+
+
+
+39. Find out the output of the following program.
+
+public class A 
+{
+   void m1() {
+      System.out.println("m1 in class A");	 
+ }
+}
+public class B extends A 
+{
+void m1() {
+     super.m1();
+     System.out.println("m1 in class B");
+  }
+}
+public class C extends B 
+{
+ void m1() {
+    System.out.println("m1 in class C"); 
+    super.m1();
+  }
+ }
+public class Test {
+public static void main(String[] args) 
+{
+   C c = new C();
+    c.m1();
+  }
+}
+Ans: 
+
+40. Identify the error in the following code.
+
+final class A 
+{
+ void m1() {
+     System.out.println("m1 in class A");	 
+ }
+}
+public class B extends A 
+{
+public static void main(String[] args) 
+{
+    B b = new B();
+ }	
+}
+Ans: 
+
+
+ 
+41. Will the code compile successfully? If not, identify the error in the following code.
+
+class A 
+{
+   int x = 50;	
+  private A() {
+     System.out.println(x);
+   }
+}
+public class B extends A 
+{
+public static void main(String[] args) 
+{
+    B b =new B();
+ }	
+}
+Ans:
+
+42. What problem will arise when the following code is compiled?
+
+class A {	
+ public A(int a) {
+  
+  }
+}
+public class B extends A {
+public B() {
+	
+  }
+}
+public class Test {
+public static void main(String[] args) 
+{
+    B b = new B();
+  }
+}
+Ans: Java compiler will generate compile-time error: Implicit super constructor A() is undefined. Must explicitly invoke another constructor
+
+43. How many ways to implement relationships among classes in Java?
+
+Ans: There are four ways to make relationships among classes. They are as follows:
+
+a. Association
+b. Aggregation
+c. Composition
+d. Inheritance
+
+44. What is Association in OOPs concept?
+
+Ans: Association in Java is one of the core concepts of OOPs. It establishes the relation between two classes that are independent of one another.
+
+In association, all objects have their own life cycle and there is no ownership between objects. Association can be unidirectional or bidirectional.
+
+45. In the OOPs concept, what is meant by Aggregation?
+
+Ans: Aggregation in java represents has-a relationship. It is a special form of association that represents an ownership relation between two objects.
+
+In aggregation, two aggregated objects have their own life cycle but one of the objects is the owner of has-a relationship.
+
+46. What is meant by Composition in OOPs?
+
+Ans: Composition in java is one of the core concepts of OOPs and a more restrictive case of aggregation. It represents has-a relationship that contains an object and cannot exist on its own.
+
+In simple words, if a class object holds an object of another class, it is called composition. It establishes strong relationship between two objects than aggregation.
+
+47. Which is more tightly bound? Inheritance or Composition?
+
+Ans: Composition is more tightly bound than inheritance.
+
+48. What is the difference between Inheritance and Composition?
+
+Ans: Inheritance represents Is-A relationship between subclass and its superclass whereas, composition represents Has-A relationship between classes.
+
+49. When will you prefer composition over inheritance?
+
+Ans: Inheritance can be used only when there is a perfect IS-A relationship between the superclass and subclass definitions. But in case of any confusion, prefer composition over inheritance.
+
+50. How aggregation and composition both are different concepts?
+
+Ans: In the OOPs concept, aggregation and composition both are types of association relations. A composition establishes a strong relationship between classes.
+
+If the composite object is destroyed, all its parts are destroyed. For example, a car has a steering wheel. If car object is destroyed, there is no meaning to be the existence of steering wheel.
+
+Aggregation establishes a weaker relationship between classes than composition. For example, a library has students. If a library is destroyed, students still exist. Hence, library and student are related by aggregation.
+

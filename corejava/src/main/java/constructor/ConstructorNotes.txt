@@ -1,0 +1,20 @@
+What is Constructor?
+Is a Special type of method used for initializing Objects of a class.
+Also initializes variables of the class with default values.
+
+Constructor vs Method
+Constructor does not have return type.
+Constructor name and class name must be same.
+When we create an object of a class, Constructor will get called automatically.
+
+Imp  =>>>> When we(developer) doesn't provide any Constructor in class, JVM will provide default Constructor.
+Imp  =>>>> When developer writes arg constructor then JVM won't provide you default constructor and dev needs
+            to write no-arg constructor.
+
+no-arg constructor(Developer) vs default constructor(JVM)
+
+Types of Constructor
+1) User defined
+    A. Arg constructor // parameterized constructor
+    B. No Arg constructor //non parameterized constructor
+2) default constructor

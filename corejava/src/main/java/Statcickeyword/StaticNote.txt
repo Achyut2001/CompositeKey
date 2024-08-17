@@ -1,0 +1,20 @@
+What is static?
+static is non-access modifier.
+
+Note: We don't need to create an Object of a class, to access static method.
+       We can access static methods using class name.
+
+
+
+Why we use static?
+When we want to share same copy with all the Objects of a class, we mark it as a static.
+
+Whatever static it belongs to whole class and not specific object.
+
+For instance variable, each object will get his own copy.
+
+
+Types of variables
+1) static
+2) instance
+3) local

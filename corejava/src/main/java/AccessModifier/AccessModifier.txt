@@ -1,0 +1,32 @@
+What do you mean by Access modifier?
+
+Types of Relationship between class
+1) IS-A    => when once class extends another class, it is example of IS-A relationship
+2) HAS-A   => When we create an Object of one class in another class.   => Based on Usage
+
+Car
+Nexon  IS-A Car
+
+
+Bathroom HAS-A Tap
+Car HAS-A Brake
+
+
+Why we need Access modifiers?
+
+private
+public
+protected
+default(which we don't provide) Note=> When we do not provide any access modifier for class/variable/method,
+                                        java gives it default access modifier
+
+Parent class  => 3 methods  (1 method no access to any Child class)
+
+private   => password?
+public
+
+Package Name
+
+import statements   =>
+
+class code

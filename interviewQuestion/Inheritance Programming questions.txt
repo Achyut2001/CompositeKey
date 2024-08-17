@@ -1,0 +1,173 @@
+51. What will be the output of the following program?
+
+a)
+
+class A 
+{	
+   int x;
+   void m1() {
+      System.out.println(x);	  
+ }
+}
+public class B extends A 
+{
+   int y;
+   void m1() {
+      System.out.println(y);	 
+ }
+}
+public class Test {
+public static void main(String[] args) 
+{
+   B b = new B();
+    b.x = 20;
+    b.y = 30;
+    b.m1();
+  }
+}
+Ans: 30
+
+b)
+
+class A 
+{	
+   int x;
+   void m1() {
+      System.out.println(x);	  
+ }
+}
+public class B extends A 
+{
+   int y;
+   void m1() {
+      super.x = y - 1;	 
+      System.out.println(y+ " " +x);	 
+ }
+}
+public class Test {
+public static void main(String[] args) 
+{
+  B b = new B();
+   b.x = 20;
+   b.y = 30;
+   b.m1();
+  }
+}
+Ans: 30 29
+
+c)
+
+class A {	
+ int x = 20;
+ void m1(){
+  System.out.println(x);	  
+ }
+}
+public class B extends A {
+ int y = 30;
+ void m1(){
+   super.x = super.x + 1;	 
+  System.out.println(super.x+ " " +y);	 
+ }
+}
+public class Test {
+public static void main(String[] args) {
+ A a = new B();
+ a.m1();
+  }
+}
+Ans: 21 30
+
+d)
+
+class A {	
+ public int x;
+ private int y;
+}
+public class B extends A {
+ void m1(){
+   super.y = super.x + 1;	 
+  System.out.println(super.x+ " " +super.y);	 
+ }
+}
+public class Test {
+public static void main(String[] args) {
+ B b = new B();
+  b.x = 20;
+  b.y = 30;
+  b.m1();
+  }
+}
+Ans: Compilation error.
+
+e)
+
+class A 
+{	
+  public int x;
+  public int y;
+  A() {
+    x = 10;
+    y = 20;
+  }
+}
+public class B extends A {
+ int z;	
+ B() {
+    super();
+ }
+}
+public class Test {
+public static void main(String[] args) 
+{
+   B b = new B();
+   System.out.println(b.x+ " " +b.y);
+  }
+}
+Ans: 10 20
+
+f)
+
+class A {	
+ public int x;
+ protected int y;
+}
+public class B extends A {
+ int y;	
+ void m1(){
+  super.y = 10;
+  System.out.println(x+ " " +super.y+ " " +y);
+ }
+}
+public class Test {
+public static void main(String[] args) {
+ B b = new B();
+  b.x = 20;
+  b.y = 30;
+  b.m1();
+  }
+}
+Ans: 20 10 30
+
+g)
+
+class A {	
+ public int x;
+ protected int y;
+}
+public class B extends A {
+ int y;	
+ void m1(){
+  super.y = super.x + y;
+  System.out.println(x+ " " +super.y+ " " +y);
+ }
+}
+public class Test {
+public static void main(String[] args) {
+ B b = new B();
+  b.x = 20;
+  b.y = 30;
+  b.m1();
+  }
+}
+Ans: 20 50 30
