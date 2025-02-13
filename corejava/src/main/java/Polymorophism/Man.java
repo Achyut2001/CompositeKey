@@ -12,6 +12,7 @@ class child extends employee {
     void WorkingAsEmployee() {
 
     }
+
 }
 
 public class Man {
