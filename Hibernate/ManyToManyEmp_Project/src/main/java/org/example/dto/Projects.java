@@ -1,8 +1,7 @@
-package DTO;
-
-import org.hibernate.mapping.Map;
+package org.example.dto;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -11,6 +10,7 @@ public class Projects {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int p_id;
 
+    @NotNull(message="Project Name is must")
     private String p_name;
     @ManyToMany
     @JoinColumn(name = "projectsList")

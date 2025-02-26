@@ -1,6 +1,6 @@
 package org.example;
 
-import DTO.Employees;
+import org.example.dto.Employees;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

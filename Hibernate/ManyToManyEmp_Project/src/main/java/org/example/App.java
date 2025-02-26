@@ -1,86 +1,99 @@
 package org.example;
 
-import DTO.Employees;
-import DTO.Projects;
+import org.example.dto.Employees;
+import org.example.dto.Projects;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-
-import java.io.Serializable;
+import javax.validation.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Hello world!
  */
 public class App {
-    public static void main(String[] args) {
-
+    public static void main(String[] args)  {
+        System.out.println("Hello World!");
 
         Configuration cfg = new Configuration().configure();
 
+
         SessionFactory sessionFactory = cfg.buildSessionFactory();
 
-        Session session = sessionFactory.openSession();
+
+        try (Session session = sessionFactory.openSession()) {
 
 
-        Employees emp = new Employees();
-        emp.setEmp_id(41);
-        emp.setEmp_name("Satish");
+            Employees emp = new Employees();
+           /* ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
+            Validator validator = validatorFactory.getValidator();*/
+            emp.setEmp_name("Satishs");
 
-        Employees emp2 = new Employees();
-        emp2.setEmp_id(42);
-        emp2.setEmp_name("Anuja");
+            Employees emp2 = new Employees();
 
-        Employees employees1 = new Employees();
-        employees1.setEmp_id(43);
-        employees1.setEmp_name("Vishnu");
+            emp2.setEmp_name("Anuja");
 
-        // Create Project entities
-        Projects projects = new Projects();
-        projects.setP_id(42);
-        projects.setP_name("Library Management");
+            Employees employees1 = new Employees();
 
-        Projects projects1 = new Projects();
-        projects1.setP_id(43);
-        projects1.setP_name("Student Portal");
-
-        // Create a list of projects and assign to employees
-        List<Projects> projectsList = new ArrayList<>();
-        projectsList.add(projects);
-        projectsList.add(projects1);
-
-        List<Employees> employeesList = new ArrayList<>();
-        employeesList.add(emp);
-        employeesList.add(emp2);
-        employeesList.add(employees1);
-
-        // Establishing many-to-many relationship
-        emp.setProjectsList(projectsList);  // Set projects for emp
-        emp2.setProjectsList(projectsList); // Assign projects to emp2 (if needed)
-        //    employees1.setProjectsList(projectsList); // Assign projects to employees1
-
-        projects.setEmpList(employeesList); // Set employees for the projects
-        projects1.setEmpList(employeesList); // Set employees for project1
+            employees1.setEmp_name("Vishnu");
 
 
+            Projects projects = new Projects();
+
+            projects.setP_name("Library Management");
+
+            Projects projects1 = new Projects();
+
+            projects1.setP_name("Student Portal");
 
 
-        Transaction transaction = session.beginTransaction();
-        session.flush();
+            List<Projects> projectsList = new ArrayList<>();
+            projectsList.add(projects);
+            projectsList.add(projects1);
 
-        session.save(emp);
-        session.save(emp2);
-        session.save(employees1);
-        session.save(projects);
-        session.save(projects1);
+            List<Employees> employeesList = new ArrayList<>();
+            employeesList.add(emp);
+            employeesList.add(emp2);
+            employeesList.add(employees1);
 
 
-        transaction.commit();
+            emp.setProjectsList(projectsList);
+            emp2.setProjectsList(projectsList);
 
-        session.close();
+
+            projects.setEmpList(employeesList);
+            projects1.setEmpList(employeesList);
+
+
+            Transaction transaction = session.beginTransaction();
+
+
+            session.save(emp);
+            System.out.println(session.get(Employees.class, 1));
+
+            session.save(emp2);
+            session.save(employees1);
+
+
+            /*Set<ConstraintViolation<Employees>>violations=validator.validate(emp);
+            if (violations.isEmpty()){
+                System.out.println();
+            }*/
+
+            transaction.commit();
+
+            session.save(emp);
+            System.out.println(session.get(Employees.class, 1));
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
 
     }
 }
