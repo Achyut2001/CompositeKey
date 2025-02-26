@@ -1,8 +1,8 @@
 
 4) If one abstract class implements interface,
-then it's not mandatory for that child class to provide method implementations of abstract methods of interface.
+then it's not mandatory for that Abstraction1.child class to provide method implementations of abstract methods of interface.
 5) If concrete/non-abstract implements interface,
-then its  mandatory for that child class to provide method implementations of abstract methods of interface.
+then its  mandatory for that Abstraction1.child class to provide method implementations of abstract methods of interface.
 
 
 1 class extends another class.

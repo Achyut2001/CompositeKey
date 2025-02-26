@@ -1,6 +1,6 @@
 package org.example;
 
-import org.springframework.context.ApplicationContext;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -13,6 +13,6 @@ public class App {
                 new ClassPathXmlApplicationContext("services.xml");
 
         Students student = (Students) context.getBean("studentbean");
-        student.display();
+        System.out.println(student);
     }
 }

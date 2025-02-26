@@ -1,5 +1,7 @@
 package ConditionalStmt;
+
 import java.util.Scanner;
+
 public class If_ElseStmt {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -31,22 +33,22 @@ public class If_ElseStmt {
 
 
 
-        /* === if-else  using scanner class === */
-/*
-        System.out.println("Enter your age ?");
+    /* === if-else  using scanner class === */
+                    /*
+                            System.out.println("Enter your age ?");
 
-        int age = sc.nextInt();
-        System.out.println("Enter your weight ?");
-        double weight = sc.nextDouble();
-        if (  18 <= age && weight >= 50) {
-            System.out.println("You are eligible ");
-        } else {
-            System.out.println("You are not eligible ");
-        }
+                            int age = sc.nextInt();
+                            System.out.println("Enter your weight ?");
+                            double weight = sc.nextDouble();
+                            if (  18 <= age && weight >= 50) {
+                                System.out.println("You are eligible ");
+                            } else {
+                                System.out.println("You are not eligible ");
+                            }
     }
 
 */
 
 
-    }
+}
 

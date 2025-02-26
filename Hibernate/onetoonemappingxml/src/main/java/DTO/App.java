@@ -1,7 +1,5 @@
-package org.example;
+package DTO;
 
-import DTO.Department;
-import DTO.Employees;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -12,7 +10,7 @@ import org.hibernate.cfg.Configuration;
  */
 public class App {
     public static void main(String[] args) {
-        Configuration cfg = new Configuration().configure("hibernate.hbm.xml");
+        Configuration cfg = new Configuration().configure();
 
         SessionFactory sessionFactory = cfg.buildSessionFactory();
         Session session = sessionFactory.openSession();
@@ -20,6 +18,7 @@ public class App {
 
         Employees employees=new Employees();
         employees.setName("Achyut");
+        employees.setG_mail("achyut@gmail.com");
 
 
         Department department=new Department();

@@ -1,4 +1,4 @@
-package constructor;
+package Constructor;
 
 public class ClassObject {
     void Method12(){
@@ -8,6 +8,7 @@ public class ClassObject {
 
     public static void main(String[] args) {
     ClassObject obj=new ClassObject();
+
 
     }
 }

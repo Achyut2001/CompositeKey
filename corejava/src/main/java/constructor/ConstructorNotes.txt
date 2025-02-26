@@ -8,13 +8,13 @@ Constructor name and class name must be same.
 When we create an object of a class, Constructor will get called automatically.
 
 Imp  =>>>> When we(developer) doesn't provide any Constructor in class, JVM will provide default Constructor.
-Imp  =>>>> When developer writes arg constructor then JVM won't provide you default constructor and dev needs
-            to write no-arg constructor.
+Imp  =>>>> When developer writes arg Constructor then JVM won't provide you default Constructor and dev needs
+            to write no-arg Constructor.
 
-no-arg constructor(Developer) vs default constructor(JVM)
+no-arg Constructor(Developer) vs default Constructor(JVM)
 
 Types of Constructor
 1) User defined
-    A. Arg constructor // parameterized constructor
-    B. No Arg constructor //non parameterized constructor
-2) default constructor
+    A. Arg Constructor // parameterized Constructor
+    B. No Arg Constructor //non parameterized Constructor
+2) default Constructor

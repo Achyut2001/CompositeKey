@@ -1,4 +1,4 @@
-package constructor;
+package Constructor;
 
 public class constructor_class {
     int a;

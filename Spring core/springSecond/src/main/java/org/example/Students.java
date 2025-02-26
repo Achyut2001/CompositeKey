@@ -1,4 +1,4 @@
-package Beans;
+package org.example;
 
 import lombok.Data;
 

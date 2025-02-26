@@ -1,4 +1,4 @@
-package interfaceClass;
+package InterfaceClass;
 
 public interface PoliceStation {
     void police();
