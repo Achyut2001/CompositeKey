@@ -1,4 +1,4 @@
-package Static;
+package Statcickeyword;
 
 
 public class VariablesTypes {
@@ -27,7 +27,7 @@ public class VariablesTypes {
 
 
     public static void main(String[] args) {
-        //String ii = "Teat";  // Object is also called as instance of a class
+        //VaribleType.String ii = "Teat";  // Object is also called as instance of a class
         VariablesTypes obj1 = new VariablesTypes();
         obj1.instanceVariable = "Test";
         obj1.tt = "JavaProgram";

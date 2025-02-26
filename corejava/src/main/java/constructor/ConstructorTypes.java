@@ -1,6 +1,6 @@
-package constructor;
+package Constructor;
 
-class ConstructorTest{
+class ConstructorTest {
     //default constructor is present in this class
     public static void main(String[] args) {
         ConstructorTest t = new ConstructorTest();
@@ -8,14 +8,15 @@ class ConstructorTest{
 }
 
 public class ConstructorTypes {
-    ConstructorTypes(){
+    ConstructorTypes() {
         System.out.println("This is no-arg or non param constructor");
     }
-    ConstructorTypes(int a){
+
+    ConstructorTypes(int a) {
         System.out.println("This is arg or  param constructor");
     }
 
-    ConstructorTypes(int a, String ss){
+    ConstructorTypes(int a, String ss) {
         System.out.println("This is arg or  param constructor");
     }
 

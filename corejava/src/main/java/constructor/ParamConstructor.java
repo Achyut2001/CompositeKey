@@ -1,4 +1,4 @@
-package constructor;
+package Constructor;
 
 public class ParamConstructor {
     int a;

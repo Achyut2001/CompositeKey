@@ -1,4 +1,4 @@
-package constructor;
+package Constructor;
 
 public class Constructor_Changing {
     public static void main(String[] args) {
@@ -17,5 +17,4 @@ class Chaining_Parent {
     Chaining_Parent() {
         System.out.println("Parent");
     }
-
 }

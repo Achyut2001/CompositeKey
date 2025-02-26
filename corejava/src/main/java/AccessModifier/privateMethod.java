@@ -1,9 +1,9 @@
 package AccessModifier;
 
-public class privateMethod {
-    public static void main(String[] args) {
+import java.lang.reflect.Method;
 
-
-
+public class PrivateMethod {
+    private void method() {
+        System.out.println("Private Method");
     }
 }

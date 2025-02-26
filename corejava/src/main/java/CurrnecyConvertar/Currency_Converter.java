@@ -11,7 +11,6 @@ public class Currency_Converter {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter you amount you want to convert in Rupees");
         double amount = sc.nextDouble();
-
         Dollar d = new Dollar();
         Rupee R = new Rupee();
 

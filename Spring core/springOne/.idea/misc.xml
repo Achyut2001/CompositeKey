@@ -8,6 +8,16 @@
       </list>
     </option>
   </component>
+  <component name="ProjectResources">
+    <resource url="http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd" location="$USER_HOME$/AppData/Local/JetBrains/IdeaIC2022.2/extResources/7cf46fe7_hibernate-configuration-3.0.dtd" />
+    <resource url="http://www.springframework.org/schema/beans" location="$PROJECT_DIR$" />
+    <resource url="http://www.springframework.org/schema/context" location="$PROJECT_DIR$" />
+    <resource url="http://www.springframework.org/schema/tx" location="$PROJECT_DIR$" />
+    <resource url="http://www.springframework.org/schema/tx/spring-tx.xsd" location="$USER_HOME$/AppData/Local/JetBrains/IdeaIC2024.2/extResources/bc20ae51_spring-tx.xsd" />
+    <resource url="https://www.springframework.org/schema/beans/spring-beans-4.3.xsd" location="$USER_HOME$/AppData/Local/JetBrains/IdeaIC2024.2/extResources/38fbf776_spring-beans-4.3.xsd" />
+    <resource url="https://www.springframework.org/schema/tool/spring-tool-4.3.xsd" location="$USER_HOME$/AppData/Local/JetBrains/IdeaIC2024.2/extResources/93b79a08_spring-tool-4.3.xsd" />
+    <resource url="xmlns:p=&quot;http://www.springframework.org/schema/p&quot;" location="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="23" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
