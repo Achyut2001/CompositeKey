@@ -6,7 +6,7 @@
     <session-factory>
         <!-- Database Connection  -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/Hibernate</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/Validation</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">postgres</property>
 
@@ -17,11 +17,13 @@
         <property name="hibernate.format_sql">true</property>
 
         <!-- Ehcache Configuration -->
-       <!-- <property name="hibernate.cache.use_second_level_cache">true</property>
+      <!--  <property name="hibernate.cache.use_second_level_cache">true</property>
         <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>-->
 
+
+
         <!--  Mappings -->
-        <mapping class="org.example.dto.Employees"/>
-        <mapping class="org.example.dto.Projects"/>
+        <mapping class="org.example.DTO.Employees"/>
+       <!-- <mapping class="org.example.dto.Projects"/>-->
     </session-factory>
 </hibernate-configuration>

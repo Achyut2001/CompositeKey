@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator;
 
 import javax.validation.*;
 import java.util.ArrayList;
@@ -29,9 +30,14 @@ public class App {
 
 
             Employees emp = new Employees();
-           /* ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
-            Validator validator = validatorFactory.getValidator();*/
-            emp.setEmp_name("Satishs");
+            ValidatorFactory factory = Validation.byDefaultProvider()
+                    .configure()
+                    .messageInterpolator(new ParameterMessageInterpolator())
+                    .buildValidatorFactory();
+            Validator validator = factory.getValidator();
+
+
+            emp.setEmp_name("Satishs dddddddddddddddddddddddd");
 
             Employees emp2 = new Employees();
 
@@ -79,10 +85,18 @@ public class App {
             session.save(employees1);
 
 
-            /*Set<ConstraintViolation<Employees>>violations=validator.validate(emp);
-            if (violations.isEmpty()){
-                System.out.println();
-            }*/
+            Set<ConstraintViolation<Employees>> violations = validator.validate(emp);
+            for (ConstraintViolation<Employees> violation: violations ){
+                System.out.println(violation.getPropertyPath()+" "+violation.getMessage());
+            }
+
+
+
+            Set<ConstraintViolation<Employees>> violations1 = validator.validate(emp2);
+            for (ConstraintViolation<Employees> violation: violations ){
+                System.out.println(emp2 +" Emp2 violation"+""+violation.getPropertyPath()+" "+violation.getMessage());
+            }
+
 
             transaction.commit();
 
